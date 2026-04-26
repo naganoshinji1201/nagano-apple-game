@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>オセロゲーム</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>オセロ</h1>
+      <section class="status" aria-live="polite">
+        <p id="turn-label">手番: 黒</p>
+        <p id="score-label">黒 2 - 2 白</p>
+        <p id="message-label">有効なマスを選んでください。</p>
+      </section>
+      <div id="board" class="board" role="grid" aria-label="オセロ盤"></div>
+      <div class="actions">
+        <button id="restart-button" type="button">最初からやり直す</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
