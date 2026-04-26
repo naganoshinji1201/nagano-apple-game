@@ -3,22 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>オセロゲーム</title>
+    <title>じゃんけんゲーム</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app">
-      <h1>オセロ</h1>
-      <section class="status" aria-live="polite">
-        <p id="turn-label">手番: 黒</p>
-        <p id="score-label">黒 2 - 2 白</p>
-        <p id="message-label">有効なマスを選んでください。</p>
+      <h1>写真でじゃんけん</h1>
+      <p class="lead">添付写真（またはローカル画像）をプレイヤー画像として使って、CPUとじゃんけんします。</p>
+
+      <section class="photo-panel">
+        <label for="photo-input">プレイヤー写真を選択</label>
+        <input id="photo-input" type="file" accept="image/*" />
+        <img id="player-photo" alt="プレイヤー写真プレビュー" />
       </section>
-      <div id="board" class="board" role="grid" aria-label="オセロ盤"></div>
-      <div class="actions">
-        <button id="restart-button" type="button">最初からやり直す</button>
-      </div>
+
+      <section class="choices" aria-label="手を選ぶ">
+        <button type="button" class="hand-button" data-hand="rock">✊ グー</button>
+        <button type="button" class="hand-button" data-hand="scissors">✌️ チョキ</button>
+        <button type="button" class="hand-button" data-hand="paper">✋ パー</button>
+      </section>
+
+      <section class="status" aria-live="polite">
+        <p id="round-label">手を選んでください。</p>
+        <p id="result-label">結果: -</p>
+        <p id="score-label">あなた 0 - 0 CPU</p>
+      </section>
+
+      <button id="reset-button" type="button">スコアをリセット</button>
     </main>
+
     <script src="script.js"></script>
   </body>
 </html>
